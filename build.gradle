@@ -36,4 +36,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-security")
     testCompile("junit:junit")
     compile('org.projectlombok:lombok')
+    compile("org.springframework.boot:spring-boot-starter-amqp")
 }

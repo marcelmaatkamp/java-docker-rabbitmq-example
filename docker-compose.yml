@@ -1,6 +1,17 @@
 version: '2'
 services:
 
+ rabbitmq:
+  image: marcelmaatkamp/rabbitmq-mqtt-ldap
+  restart: always
+  hostname: rabbitmq
+  environment:
+    RABBITMQ_NODENAME: rabbitmq@rabbitmq
+  volumes:
+   - rabbitmq:/var/lib/rabbitmq/mnesia
+  ports:
+   - "15673:15672"
+
  java:
   image: java/example
   build:
@@ -8,3 +19,5 @@ services:
   ports:
    - "8081:8080"
 
+volumes:
+ rabbitmq:
